@@ -113,6 +113,6 @@ Each view file is an HTML like Jinja2 template.
 
 - [Python](https://www.python.org/) version 3 or higher.
 - [Aurora](https://github.com/heminsatya/aurora) Framework.
-- [Flask](https://github.com/heminsatya/aurora) Framework.
+- [Flask](https://github.com/pallets/flask) Framework.
 - [WTForms](https://pypi.org/project/WTForms/).
 
