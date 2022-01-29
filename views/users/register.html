@@ -1,0 +1,25 @@
+{% extends 'users/layout.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+    <form action="/{{USERS}}/register/" method="post" class="frm-app" id="register-form">
+        {{ form.csrf_token }}
+        <div class="form-group">
+            <input type="text" name="username" class="form-control" placeholder="*Username" required>
+        </div>
+        <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="*Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" class="form-control" placeholder="*Password" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="confirm" class="form-control" placeholder="*Confirm Password" required>
+        </div>
+        <button type="submit" class="btn btn-app submit">Register</button>
+    </form>
+    <hr class="divider divider-gradient">
+    <p>Already Have An Account? <a href="/{{USERS}}/login/" style="margin-left: 0.5rem;">Login Here</a></p>
+{% endblock %}

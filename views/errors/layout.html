@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design and SEO -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A short decription about your website.">
+    <meta name="keywords" content="Some, Keywords">
+    <meta name="sitename" content="Your Website Name">
+    <meta name="author" content="Your Name">
+
+    <!-- Page title -->
+    <title>{% block title %}Error Title{% endblock %}</title>
+
+    <!-- Favorite icon -->
+    <link rel="icon" type="image/png" href="/{{STATICS}}/assets/icon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/{{STATICS}}/assets/styles.css">
+    <link rel="stylesheet" href="/{{STATICS}}/errors/main.css">
+
+    <!-- Scripts -->
+    <script src="/{{STATICS}}/assets/scripts.js"></script>
+    <script src="/{{STATICS}}/errors/main.js"></script>
+</head>
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+</html>
