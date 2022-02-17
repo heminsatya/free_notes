@@ -37,7 +37,7 @@ else:
 
 
 # Database System
-DB_SYSTEM = 'SQLite'    # 'SQLite', 'PostgreSQL', 'MySQL'
+DB_SYSTEM = 'Postgres'    # 'SQLite', 'MySQL', 'Postgres'
 
 
 # Check the Database System
@@ -47,28 +47,32 @@ if DB_SYSTEM == 'SQLite':
         'database': 'app.db',
     }
 
-# PostgreSQL Database
-elif DB_SYSTEM == 'PostgreSQL':
-    DB_CONFIG = {
-        'host':     'localhost',
-        'user':     'postgres',
-        'password': 'db_password',
-        'database': 'app_db',
-        'port':     '5432',
-    }
-
 # MySQL Database
 elif DB_SYSTEM == 'MySQL':
     DB_CONFIG = {
         'host':     'localhost',
         'user':     'root',
-        'password': 'db_password',
+        'password': 'mspass123456',     # db_password
         'database': 'app_db',
+    }
+
+# Postgres Database
+elif DB_SYSTEM == 'Postgres':
+    DB_CONFIG = {
+        'host':     'localhost',
+        'user':     'postgres',
+        'password': 'pspass123456',     # db_password
+        'database': 'app_db',
+        'port':     '5432',
     }
 
 
 # Database API Engine
 DB_ENGINE = 'AuroraSQL'    # 'AuroraSQL'
+
+
+# Database Safe Typing
+SAFE_TYPE = True
 
 
 # FORM API Engine

@@ -37,7 +37,7 @@ class NewNote(Controller):
                 'user_id': user['id'],
                 'title': title,
                 'content': content,
-                'date': datetime.now().strftime("%m-%d-%Y")
+                # 'date': datetime.now().strftime("%m-%d-%Y")
             }
             notes.create(data=data)
 
