@@ -37,7 +37,7 @@ else:
 
 
 # Database System
-DB_SYSTEM = 'Postgres'    # 'SQLite', 'MySQL', 'Postgres'
+DB_SYSTEM = 'SQLite'    # 'SQLite', 'MySQL', 'Postgres'
 
 
 # Check the Database System
