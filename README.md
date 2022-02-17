@@ -62,7 +62,7 @@ For forms I have used only the CSRF attribute of WTForms, and have validated for
 
 ### Database Initialization
 
-The database file is created via initial database migration using the following command:
+To initialize the database run the following command:
 
 ```
 (venv) python manage.py init-db 
