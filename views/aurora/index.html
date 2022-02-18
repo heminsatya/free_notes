@@ -6,14 +6,23 @@
     <h1>Welcome to Aurora</h1>
     <p>Aurora is an MVC web framework for creating CRUD applications quickly and simply.</p>
     <p>It based on REST architecture. In another word it is a RESTFUL web framework.</p>
-    <p>Aurora is written in <a href="https://www.python.org/">Python</a>, and built on <a href="https://flask.palletsprojects.com/">Flask</a>.</p>
+    <p>Aurora mostly is written in <a href="https://www.python.org/">Python</a>, and partially have used <a href="https://flask.palletsprojects.com/">Flask</a>.</p>
     <p>Current Version: <strong>{{ version }} <em>beta</em></strong></p>
 
     <hr class="divider divider-gradient">
 
+    <h1>Installation</h1>
+    <p>You can install Aurora by running:</p>
+    <section class="cli">
+        <code>$ pip install aurora-mvc</code>
+    </section>
+    
+    <hr class="divider divider-gradient">
+
+    <h1>Usage</h1>
     <h2>Get Started</h2>
     <p>To get started with Aurora simply do the following steps:</p>
-    <p><strong>1-</strong> Create the root app (project) directory:</p>
+    <p><strong>1-</strong> Create the project (root app) directory:</p>
     <section class="cli">
         <code>$ mkdir <em>my_app</em></code>
     </section>
@@ -59,14 +68,30 @@
     <section class="cli" style="margin-bottom: 2rem;">
         <code>(venv) python app.py</code>
     </section>
-
-    <hr class="divider divider-gradient">
     
-    <h3>Next Steps</h3>
+    <h2>Next Steps</h2>
     <p>Documentation: <a href="https://github.com/heminsatya/aurora/tree/main/docs">Aurora Docs</a></p>
     <p>Changelog: <a href="https://github.com/heminsatya/aurora/tree/main/changes">Aurora Changes</a></p>
     <p>Issues: <a href="https://github.com/heminsatya/aurora/issues">Aurora Bug Tracker</a></p>
     <p>Source: <a href="https://github.com/heminsatya/aurora">Aurora GitHub Repo</a></p>
     <p>PyPI: <a href="https://pypi.org/project/aurora-mvc/">Aurora PyPI Page</a></p>
+    
+    <hr class="divider divider-gradient">
+
+    <h1>Dependencies</h1>
+
+    <h2>Packages:</h2>
+    <ul>
+        <li><a href="https://pypi.org/project/Flask/">Flask</a></li>
+        <li><a href="https://pypi.org/project/click/">Click</a> -- <em>Will be installed by flask.</em></li>
+        <li><a href="https://pypi.org/project/WTForms/">WTForms</a> -- For WTForms & CSRF tokens.</li>
+    </ul>
+
+    <h2>Database APIs:</h2>
+    <ul>
+        <li><a href="https://docs.python.org/3/library/sqlite3.html">sqlite3</a> -- If you are using SQLite Database. <em>Included in the standard python library.</em></li>
+        <li><a href="https://pypi.org/project/psycopg2/">psycopg2</a> -- If you are using PostgreSQL Database.</li>
+        <li><a href="https://pypi.org/project/mysql-connector-python/">mysql.connector</a> -- If you are using MySQL Database.</li>
+    </ul>
 
 {% endblock %}
