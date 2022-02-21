@@ -1,12 +1,11 @@
-##
-# @Caution! Please do not change this file until you fully understand the controllers documentation.
-# @Desc: App Error Controllers
-# @Ex: ('ControllerName', 'error-code'),
-# 
+# Dependencies
+from aurora.helpers import router
+
+# Controllers routes
 controllers = [
-    ('BadRequest', '400'),
-    ('AccessDenied', '403'),
-    ('NotFound', '404'),
-    ('MethodForbidden', '405'),
-    ('ServerError', '500'),
+    router(controller='BadRequest', url='400'),
+    router(controller='AccessDenied', url='403'),
+    router(controller='NotFound', url='404'),
+    router(controller='MethodForbidden', url='405'),
+    router(controller='ServerError', url='500'),
 ]#do-not-change-me

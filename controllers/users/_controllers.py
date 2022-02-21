@@ -1,12 +1,10 @@
-##
-# @Caution! Please do not change this file until you fully understand the controllers documentation.
-# @Desc: App Controllers
-# @Ex: ('ControllerName', 'controller-url', [methods]),
-# @info! Methods are optional. Supported methods are ['GET', 'POST', 'PUT']. The ['Get'] is the default method.
-# 
+# Dependencies
+from aurora.helpers import router
+
+# Controllers routes
 controllers = [
-   ('Register', 'register', ['GET', 'POST']),
-   ('Login', 'login', ['GET', 'POST']),
-   ('Login', '', ['GET', 'POST']),
-   ('Logout', 'logout', ['GET']),
+    router(controller='Login', methods=['GET', 'POST']),
+    router(controller='Login', url='login', methods=['GET', 'POST']),
+    router(controller='Register', url='register', methods=['GET', 'POST']),
+    router(controller='Logout', url='logout'),
 ]#do-not-change-me

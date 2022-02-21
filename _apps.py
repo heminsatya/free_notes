@@ -1,11 +1,10 @@
-##
-# @Warning! Please do not change this file. This is controlled by the application.
-# @Desc: Installed apps (Auto Global)
-# @Ex: 'app_name': 'base_url',
-# 
-apps = {
-    'errors': 'errors',     # Error pages
-    'aurora': 'aurora',     # Test application
-    'notes': 'notes',
-    'users': 'users',
-}#do-not-change-me
+# Dependencies
+from aurora.helpers import app
+
+# Controllers routes
+apps = [
+    app(name='errors', url='errors'),
+    app(name='aurora', url='aurora'),
+    app(name='notes', url='notes'),
+    app(name='users', url='users'),
+]#do-not-change-me
