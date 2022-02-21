@@ -1,11 +1,11 @@
 # Dependencies
-from aurora.helpers import router
+from aurora.helpers import controller
 
 # Controllers routes
 controllers = [
-    router(controller='BadRequest', url='400'),
-    router(controller='AccessDenied', url='403'),
-    router(controller='NotFound', url='404'),
-    router(controller='MethodForbidden', url='405'),
-    router(controller='ServerError', url='500'),
+    controller(name='BadRequest', url='400'),
+    controller(name='AccessDenied', url='403'),
+    controller(name='NotFound', url='404'),
+    controller(name='MethodForbidden', url='405'),
+    controller(name='ServerError', url='500'),
 ]#do-not-change-me

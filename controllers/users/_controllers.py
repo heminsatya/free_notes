@@ -1,10 +1,10 @@
 # Dependencies
-from aurora.helpers import router
+from aurora.helpers import controller
 
 # Controllers routes
 controllers = [
-    router(controller='Login', methods=['GET', 'POST']),
-    router(controller='Login', url='login', methods=['GET', 'POST']),
-    router(controller='Register', url='register', methods=['GET', 'POST']),
-    router(controller='Logout', url='logout'),
+    controller(name='Login', methods=['GET', 'POST']),
+    controller(name='Login', url='login', methods=['GET', 'POST']),
+    controller(name='Register', url='register', methods=['GET', 'POST']),
+    controller(name='Logout', url='logout'),
 ]#do-not-change-me

@@ -1,7 +1,7 @@
 # Dependencies
-from aurora.helpers import router
+from aurora.helpers import controller
 
 # Controllers routes
 controllers = [
-    router(controller='Index'),
+    controller(name='Index'),
 ]#do-not-change-me
