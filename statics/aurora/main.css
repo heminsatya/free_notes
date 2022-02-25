@@ -34,12 +34,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: #1976D2;
+    color: #39B663;
     text-decoration: none;
 }
 
 a:hover {
-    color: #0D47A1;
+    color: #33A159;
     text-decoration: underline;
 }
 
@@ -90,7 +90,7 @@ ul li {
 
 .nav {
     height: 50px;
-    background-color: #4283F2;
+    background-color: #39B663;
 }
 
 .nav ul {
@@ -111,7 +111,7 @@ ul li {
     padding-bottom: 0;
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-    color: #E3EDFC;
+    color: #E7F8EC;
 }
 
 .nav ul a:hover {
