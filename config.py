@@ -87,15 +87,20 @@ SECRET_KEY = random_string(24)
 TIMEZONE = 'Central Standard Time'  # 'Central Standard Time', 'Europe/London', 'Asia/Tokyo', ...
 
 
+# Default language
+DEFAULT_LANG = 'en'
+
+
 # Multi language
 MULTI_LANG = False      # True | False
 
-if MULTI_LANG:
-    # Default language
-    DEFAULT_LANG = 'en'
 
+# For multi language
+if MULTI_LANG:
     # Available langs
-    LANGS = ['en']
+    LANGS = [
+        'en',   # English
+    ]
 
 
 # Global variables
