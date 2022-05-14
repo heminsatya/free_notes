@@ -7,7 +7,7 @@
         <h1>Note doesn't exist!</h1>
     {% else %}
         <h1>Edit Note</h1>
-        <form action="/{{NOTES}}/edit-note/" method="put" class="frm-app" id="edit-note-form">
+        <form action="{{NOTES}}/edit-note/" method="put" class="frm-app" id="edit-note-form">
             {{ form.csrf_token }}
             <input type="hidden" name="id" value="{{ note.id }}">
             <div class="form-group">

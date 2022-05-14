@@ -98,7 +98,6 @@ MULTI_LANG = False      # True | False
 # Available laguages
 LANGUAGES = (
     'en',   # English
-    'de',   # German
 )
 
 

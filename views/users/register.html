@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Register</h1>
-    <form action="/{{USERS}}/register/" method="post" class="frm-app" id="register-form">
+    <form action="{{USERS}}/register/" method="post" class="frm-app" id="register-form">
         {{ form.csrf_token }}
         <div class="form-group">
             <input type="text" name="username" class="form-control" placeholder="*Username" required>
@@ -21,5 +21,5 @@
         <button type="submit" class="btn btn-app submit">Register</button>
     </form>
     <hr class="divider divider-gradient">
-    <p>Already Have An Account? <a href="/{{USERS}}/login/" style="margin-left: 0.5rem;">Login Here</a></p>
+    <p>Already Have An Account? <a href="{{USERS}}/login/" style="margin-left: 0.5rem;">Login Here</a></p>
 {% endblock %}

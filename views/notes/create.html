@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1>Create New Note</h1>
-    <form action="/{{NOTES}}/new-note/" method="post" class="frm-app" id="new-note-form">
+    <form action="{{NOTES}}/new-note/" method="post" class="frm-app" id="new-note-form">
         {{ form.csrf_token }}
         <div class="form-group">
             <input type="text" name="title" class="form-control" placeholder="*Title" required>
