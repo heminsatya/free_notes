@@ -96,9 +96,10 @@ MULTI_LANG = False      # True | False
 
 
 # Available laguages
-LANGS = [
+LANGUAGES = (
     'en',   # English
-]
+    'de',   # German
+)
 
 
 # Global variables

@@ -2,7 +2,7 @@
 /*              Basic             */
 /* ------------------------------ */
 body {
-    background-image: url(/statics/assets/bg.jpg);
+    background-image: url(/statics/generic/bg.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
