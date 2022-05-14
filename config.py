@@ -95,12 +95,10 @@ DEFAULT_LANG = 'en'
 MULTI_LANG = False      # True | False
 
 
-# For multi language
-if MULTI_LANG:
-    # Available langs
-    LANGS = [
-        'en',   # English
-    ]
+# Available laguages
+LANGS = [
+    'en',   # English
+]
 
 
 # Global variables
