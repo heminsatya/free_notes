@@ -87,8 +87,22 @@ SECRET_KEY = random_string(24)
 TIMEZONE = 'Central Standard Time'  # 'Central Standard Time', 'Europe/London', 'Asia/Tokyo', ...
 
 
+# Multi language
+MULTI_LANG = False      # True | False
+
+if MULTI_LANG:
+    # Default language
+    DEFAULT_LANG = 'en'
+
+    # Available langs
+    LANGS = ['en']
+
+
 # Global variables
 GLOBALS = {
     'key': 'Value',
 }
 
+
+# Project version
+VERSION = "1.2.0"
