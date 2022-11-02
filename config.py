@@ -1,10 +1,20 @@
 # Dependencies
 import os
+import platform
 from aurora.helpers import random_string
 
 
 # Root app path
 ROOT_PATH = os.path.dirname(__file__)
+
+
+# Path separator
+if platform.system() == 'Windows':
+    SEP = '\\'
+
+# Unix
+else:
+    SEP = '/'
 
 
 # The error app to handle http errors (Auto Global)
@@ -20,7 +30,7 @@ STATICS = 'statics'
 
 
 # Development mode
-DEVELOPMENT = True
+DEVELOPMENT = True       # True | False
 
 
 # For development
@@ -31,8 +41,8 @@ if DEVELOPMENT:
 
 # For production deployment
 else:
-    HOST  = 'yourwebsite.com'
-    PORT  = '8080'
+    HOST  = '0.0.0.0'
+    PORT  = '5000'
     DEBUG = False
 
 
@@ -52,7 +62,7 @@ elif DB_SYSTEM == 'MySQL':
     DB_CONFIG = {
         'host':     'localhost',
         'user':     'root',
-        'password': 'mspass123456',     # db_password
+        'password': 'db_password',
         'database': 'app_db',
     }
 
@@ -61,7 +71,7 @@ elif DB_SYSTEM == 'Postgres':
     DB_CONFIG = {
         'host':     'localhost',
         'user':     'postgres',
-        'password': 'pspass123456',     # db_password
+        'password': 'db_password',
         'database': 'app_db',
         'port':     '5432',
     }
@@ -84,7 +94,12 @@ SECRET_KEY = random_string(24)
 
 
 # Timezone
-TIMEZONE = 'Central Standard Time'  # 'Central Standard Time', 'Europe/London', 'Asia/Tokyo', ...
+"""
+For Unix use 'Europe/London', 'Asia/Tokyo', etc! (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+For windows use 'Central Standard Time', 'GMT Standard Time', 'Tokyo Standard Time' etc (https://docs.microsoft.com/en-us/windows-hardware/manufacture/desktop/default-time-zones).
+@Warning! For windows it will alter Windows system time. To avoid this set it to '' (empty string).
+"""
+TIMEZONE = ''
 
 
 # Default language
@@ -101,6 +116,18 @@ LANGUAGES = (
 )
 
 
+# Maximum upload size for server (bytes)
+UPLOAD_SIZE = 16 * 1024 * 1024      # 16 MB
+
+
+# Allowed upload extensions
+UPLOAD_TYPES = ['.webp', '.jpg', '.jpeg', '.apng', '.png', '.avif', '.gif', '.svg', '.mp3', '.ogg', '.weba', '.aac', '.wav', '.mp4', '.webm', '.txt', '.pdf']
+
+
+# Upload Path
+UPLOAD_PATH = ROOT_PATH + SEP + STATICS +  SEP + 'upload'
+
+
 # Global variables
 GLOBALS = {
     'key': 'Value',
@@ -108,4 +135,4 @@ GLOBALS = {
 
 
 # Project version
-VERSION = "1.2.1"
+VERSION = "1.3.0"

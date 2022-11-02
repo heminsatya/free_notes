@@ -2,7 +2,7 @@
 from aurora import Controller, View, Forms
 from models import Users
 from flask import request
-from aurora.security import login_abort, check_password, set_session, set_cookie
+from aurora.security import login_abort, validate_password, set_session, set_cookie
 
 # The controller class
 class Login(Controller):
@@ -44,7 +44,7 @@ class Login(Controller):
 
             # Authenticate user
             # Valid user
-            if user_count == 1 and check_password(db_password, password):
+            if user_count == 1 and validate_password(db_password, password):
 
                 # Set the user session
                 set_session('user', username)
