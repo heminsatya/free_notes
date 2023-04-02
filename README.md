@@ -1,4 +1,4 @@
-# Welcome to Free Notes (Multi Language)
+# Welcome to Free Notes (v1.3.0)
 
 Free Notes is a web application to create dynamic free notes, written in [Python](https://www.python.org/) 
 and built on [Aurora](https://github.com/heminsatya/aurora) framework.
