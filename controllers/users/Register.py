@@ -1,18 +1,24 @@
 # Dependencies
+import importlib
 from aurora import Controller, View, Forms
 from models import Users
-from flask import request
-from aurora.security import login_abort, hash_password, set_session
+from aurora.security import request, login_abort, hash_password, set_session
 
 # The controller class
 class Register(Controller):
 
+    # Constructor
+    def __init__(self):
+        super().__init__()
+        
+        # Models
+        self.users  = Users()
+        self.consts = importlib.import_module(f'helpers.consts.{self.active_lang}')
+
+
     # POST Method
     @login_abort('notes')
     def post(self):
-        # The Users model
-        users = Users()
-
         # Form data
         data = request.form
         form = Forms(data)
@@ -21,9 +27,9 @@ class Register(Controller):
         if form.validate():
             # Collect form inputs
             username = data.get('username')
-            email = data.get('email')
+            email    = data.get('email')
             password = data.get('password')
-            confirm = data.get('confirm')
+            confirm  = data.get('confirm')
 
             # Required fields
             if not username or not email or not password or not confirm:
@@ -44,13 +50,13 @@ class Register(Controller):
                 }, 400
 
             # Check username
-            if users.read(where={'username':username}).count():
+            if self.users.read(where={'username':username}).count():
                 return {
                     'error': '<i class="fas fa-exclamation-circle mr-1"></i> Username already registered!',
                 }, 400
 
             # Check email
-            if users.read(where={'email':email}).count():
+            if self.users.read(where={'email':email}).count():
                 return {
                     'error': '<i class="fas fa-exclamation-circle mr-1"></i> Email already registered!',
                 }, 400
@@ -59,10 +65,10 @@ class Register(Controller):
             # Insert user into database
             data = {
                 'username': username,
-                'email': email,
+                'email':    email,
                 'password': hash_password(password),
             }
-            users.create(data=data)
+            self.users.create(data=data)
 
             # Set the user session
             set_session('user', username)
@@ -84,5 +90,4 @@ class Register(Controller):
     @login_abort('notes')
     def get(self):
         form = Forms()
-        return View('register', form=form)
-
+        return View('register', form=form, consts=self.consts, LANGUAGE=self.LANGUAGE)

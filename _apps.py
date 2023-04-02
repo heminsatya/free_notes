@@ -1,7 +1,7 @@
 # Dependencies
 from aurora.helpers import app
 
-# Controllers routes
+# Apps routes
 apps = [
     app(name='errors', url='errors'),
     app(name='aurora', url='aurora'),

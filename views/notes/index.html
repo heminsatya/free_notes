@@ -1,11 +1,11 @@
 {% extends 'notes/layout.html' %}
 
-{% block title %}Free Notes{% endblock %}
+{% block title %}{{consts.free_notes}}{% endblock %}
 
 {% block body %}
-    <h1>Welcome to Free Notes</h1>
-    <p>An online service to create dynamic free notes.</p>
+    <h1>{{consts.welcome_free_notes}}</h1>
+    <p>{{consts.online_free_notes}}</p>
     <hr class="divider divider-gradient my-5">
-    <p>Don't Have An Account? <a href="{{USERS}}/register/" style="margin-left: 0.5rem;">Register Here</a></p>
-    <p>Already Have An Account? <a href="{{USERS}}/login/" style="margin-left: 0.5rem;">Login Here</a></p>
+    <p>{{consts.dont_have_account}} <a href="{{LANGUAGE + USERS}}/register/" style="margin-left: 0.5rem;">{{consts.register_here}}</a></p>
+    <p>{{consts.have_account}} <a href="{{LANGUAGE + USERS}}/login/" style="margin-left: 0.5rem;">{{consts.login_here}}</a></p>
 {% endblock %}

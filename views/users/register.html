@@ -1,25 +1,25 @@
 {% extends 'users/layout.html' %}
 
-{% block title %}Register{% endblock %}
+{% block title %}{{consts.register}}{% endblock %}
 
 {% block body %}
-    <h1>Register</h1>
+    <h1>{{consts.register}}</h1>
     <form action="{{USERS}}/register/" method="post" class="frm-app" id="register-form">
         {{ form.csrf_token }}
         <div class="form-group">
-            <input type="text" name="username" class="form-control" placeholder="*Username" required>
+            <input type="text" name="username" class="form-control" placeholder="*{{consts.username}}" required>
         </div>
         <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="*Email" required>
+            <input type="email" name="email" class="form-control" placeholder="*{{consts.email}}" required>
         </div>
         <div class="form-group">
-            <input type="password" name="password" class="form-control" placeholder="*Password" required>
+            <input type="password" name="password" class="form-control" placeholder="*{{consts.password}}" required>
         </div>
         <div class="form-group">
-            <input type="password" name="confirm" class="form-control" placeholder="*Confirm Password" required>
+            <input type="password" name="confirm" class="form-control" placeholder="*{{consts.confirm_password}}" required>
         </div>
-        <button type="submit" class="btn btn-app submit">Register</button>
+        <button type="submit" class="btn btn-app submit">{{consts.register}}</button>
     </form>
     <hr class="divider divider-gradient">
-    <p>Already Have An Account? <a href="{{USERS}}/login/" style="margin-left: 0.5rem;">Login Here</a></p>
+    <p>{{consts.have_account}} <a href="{{LANGUAGE + USERS}}/login/" style="margin-left: 0.5rem;">{{consts.login_here}}</a></p>
 {% endblock %}

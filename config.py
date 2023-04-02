@@ -113,6 +113,7 @@ MULTI_LANG = False      # True | False
 # Available laguages
 LANGUAGES = (
     'en',   # English
+    'de',   # Deutsch
 )
 
 
@@ -121,7 +122,13 @@ UPLOAD_SIZE = 16 * 1024 * 1024      # 16 MB
 
 
 # Allowed upload extensions
-UPLOAD_TYPES = ['.webp', '.jpg', '.jpeg', '.apng', '.png', '.avif', '.gif', '.svg', '.mp3', '.ogg', '.weba', '.aac', '.wav', '.mp4', '.webm', '.txt', '.pdf']
+UPLOAD_TYPES = ['.webp', '.jpg', '.jpeg', '.apng', '.png', '.avif', '.gif', '.svg', '.mp3', '.ogg', '.weba', '.aac', '.wav', '.mp4', '.webm', '.eot', '.ttf', '.woff', '.woff2', '.txt', '.pdf']
+IMAGE_TYPES  = ['.webp', '.jpg', '.jpeg', '.apng', '.png', '.avif', '.gif', '.svg']
+AUDIO_TYPES  = ['.mp3', '.ogg', '.weba', '.aac', '.wav']
+VIDEO_TYPES  = ['.mp4', '.webm']
+FONT_TYPES   = ['.eot', '.ttf', '.woff', '.woff2']
+TEXT_TYPE    = ['.txt']
+PDF_TYPE     = ['.pdf']
 
 
 # Upload Path
@@ -130,7 +137,13 @@ UPLOAD_PATH = ROOT_PATH + SEP + STATICS +  SEP + 'upload'
 
 # Global variables
 GLOBALS = {
-    'key': 'Value',
+    'UPLOAD_TYPES': ','.join(IMAGE_TYPES) + ',' + ','.join(AUDIO_TYPES) + ',' + ','.join(VIDEO_TYPES) + ',' + ','.join(FONT_TYPES) + ',' + ','.join(TEXT_TYPE) + ',' + ','.join(PDF_TYPE),
+    'IMAGE_TYPES':  ','.join(IMAGE_TYPES),
+    'AUDIO_TYPES':  ','.join(AUDIO_TYPES),
+    'VIDEO_TYPES':  ','.join(VIDEO_TYPES),
+    'FONT_TYPES':   ','.join(FONT_TYPES),
+    'TEXT_TYPE':    ','.join(TEXT_TYPE),
+    'PDF_TYPE':     ','.join(PDF_TYPE),
 }
 
 

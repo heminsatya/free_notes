@@ -3,13 +3,13 @@
 {% block title %}My Notes{% endblock %}
 
 {% block body %}
-    <h1>My Notes</h1>
+    <h1>{{consts.my_notes}}</h1>
     <table class="table table-striped table-responsive" id="my-notes">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Date</th>
-                <th>Actions</th>
+                <th>{{consts.title}}</th>
+                <th>{{consts.date}}</th>
+                <th>{{consts.actions}}</th>
             </tr>
         </thead>
         <tbody>
@@ -18,12 +18,12 @@
                 <td class="note-title">{{ note.title }}</td>
                 <td>{{ note.date }}</td>
                 <td class="table-actions">
-                    <a href="{{NOTES}}/edit-note/{{note.id}}" class="action-edit">Edit</a>
-                    <a role="button" class="popover-open" id="delete-{{note.id}}" data-id="{{note.id}}" data-toggle="popover">Delete</a>
+                    <a href="{{LANGUAGE + NOTES}}/edit-note/{{note.id}}" class="action-edit">{{consts.edit}}</a>
+                    <a role="button" class="popover-open" id="delete-{{note.id}}" data-id="{{note.id}}" data-toggle="popover">{{consts.delete}}</a>
                     <div style="display: none;">
                         <div class="text-center" id="container-{{note.id}}">
-                            <button class="btn btn-sm btn-success action-delete" data-id="{{note.id}}">Yes</button>
-                            <button class="btn btn-sm btn-danger popover-close" data-id="{{note.id}}">No</button>
+                            <button class="btn btn-sm btn-success action-delete" data-id="{{note.id}}">{{consts.yes}}</button>
+                            <button class="btn btn-sm btn-danger popover-close" data-id="{{note.id}}">{{consts.no}}</button>
                         </div>
                     </div>
                 </td>
@@ -32,7 +32,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td class="text-center" colspan="5"><strong>No notes found!</strong></td>
+                <td class="text-center" colspan="5"><strong>{{consts.no_notes}}</strong></td>
             </tr>
         </tfoot>
         {% endfor %}

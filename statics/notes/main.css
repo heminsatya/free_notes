@@ -1,0 +1,64 @@
+/* ------------------------------ */
+/*              Header            */
+/* ------------------------------ */
+.custom-navbar {
+    background: #FFFFFF;
+    border-bottom: solid 2px #F4F4F4;
+    padding: 0 1rem;
+}
+
+@media (max-width: 767px) {
+    .top-bar .header-profile span {
+        display: none;
+    }
+    .top-bar .header-profile img {
+        margin-right: 0;
+    }
+}
+
+
+/* ------------------------------ */
+/*               Main             */
+/* ------------------------------ */
+.main {
+    box-shadow: 0 8px 10px rgb(0 0 0 / 10%);
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+/* ------------------------------ */
+/*              Footer            */
+/* ------------------------------ */
+.footer {
+    background-color: inherit;
+    color: #595959;
+}
+
+.copyright {
+    background-color: #F4F4F4;
+    color: #747474;
+    font-size: 95%;
+}
+
+
+/* ------------------------------ */
+/*              Notes             */
+/* ------------------------------ */
+#my-notes .btn-sm {
+    padding: 0.125rem 0.5rem;
+    margin-left: 0.125rem;
+    margin-right: 0.125rem;
+}
+
+.table-actions a {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.username {
+    display: block;
+    float: right;
+}

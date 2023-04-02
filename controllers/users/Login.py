@@ -1,18 +1,25 @@
 # Dependencies
+import importlib
 from aurora import Controller, View, Forms
 from models import Users
-from flask import request
-from aurora.security import login_abort, validate_password, set_session, set_cookie
+from aurora.security import request, login_abort, validate_password, set_session, set_cookie
+
 
 # The controller class
 class Login(Controller):
 
+    # Constructor
+    def __init__(self):
+        super().__init__()
+        
+        # Models
+        self.users  = Users()
+        self.consts = importlib.import_module(f'helpers.consts.{self.active_lang}')
+
+
     # POST Method
     @login_abort('notes')
     def post(self):
-        # The Users model
-        users = Users()
-
         # Form data
         data = request.form
         form = Forms(data)
@@ -23,8 +30,8 @@ class Login(Controller):
             username = data.get('username')
             password = data.get('password')
             remember = data.get('remember')
-            next = data['next']
-            url = next if next else '/'
+            next     = data['next']
+            url      = next if next else '/'
 
             # Required fields
             if not username or not password:
@@ -34,8 +41,8 @@ class Login(Controller):
 
             # Check the database
             try:
-                user_count = users.read(where={'username':username}).count()
-                db_password = users.read(where={'username':username}).first()['password']
+                user_count  = self.users.read(where={'username':username}).count()
+                db_password = self.users.read(where={'username':username}).first()['password']
 
             except:
                 return {
@@ -87,5 +94,4 @@ class Login(Controller):
         else:
             next = ''
 
-        return View('login', form=form, next=next)
-
+        return View('login', form=form, next=next, consts=self.consts, LANGUAGE=self.LANGUAGE)

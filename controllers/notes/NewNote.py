@@ -1,19 +1,29 @@
 # Dependencies
+import importlib
 from aurora import Controller, View, Forms
 from models import Users, Notes
-from aurora.security import login_required, get_session
-from flask import request
-from datetime import datetime
+from aurora.security import request, login_required, get_session
+
 
 # The controller class
 class NewNote(Controller):
 
+    # Constructor
+    def __init__(self):
+        super().__init__()
+        
+        # Models
+        self.users = Users()
+        self.notes = Notes()
+        
+        # Models objects
+        self.consts = importlib.import_module(f'helpers.consts.{self.active_lang}')
+
+
     # POST Method
     @login_required(app='users')
     def post(self):
-        # The required models
-        user = Users().read(where={'username':get_session('user')}).first()
-        notes = Notes()
+        user = self.users.read(where={'username':get_session('user')}).first()
 
         # Form data
         data = request.form
@@ -35,11 +45,11 @@ class NewNote(Controller):
             # Insert new note into the database
             data = {
                 'user_id': user['id'],
-                'title': title,
+                'title':   title,
                 'content': content,
-                # 'date': datetime.now().strftime("%m-%d-%Y")
+                # 'date':    datetime.now().strftime("%m-%d-%Y")
             }
-            notes.create(data=data)
+            self.notes.create(data=data)
 
             # Return the result
             return {
@@ -57,11 +67,7 @@ class NewNote(Controller):
     # GET Method
     @login_required(app='users')
     def get(self):
-        # The required models
-        user = Users().read(where={'username':get_session('user')}).first()
-        notes = Notes().read(where={'user_id':user['id']}, order_by={'id':'DESC'}).all()
-
         form = Forms()
+        user = self.users.read(where={'username':get_session('user')}).first()
         
-        return View('create', user=user, form=form)
-
+        return View('create', form=form, user=user, LANGUAGE=self.LANGUAGE, consts=self.consts)
